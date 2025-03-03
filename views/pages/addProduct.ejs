@@ -9,11 +9,12 @@
       <!-- Category Dropdown -->
       <div class="mb-3">
         <label for="category" class="form-label">Category</label>
-        <select class="form-select" id="category" required>
+        <select class="form-select" id="category" name="cat_name" required>
           <option value="" disabled selected>Select Category</option>
-          <option value="electronics">Electronics</option>
-          <option value="fashion">Fashion</option>
-          <option value="home_appliances">Home Appliances</option>
+          <% categories.forEach((cat) => { %>
+            <option value=""><%= cat.cat_name %>
+            </option>
+            <% }) %>
         </select>
       </div>
 

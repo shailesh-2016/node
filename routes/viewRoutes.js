@@ -36,8 +36,9 @@ router.get("/updateCat", async (req, res) => {
 
 
 //// product ////
-router.get("/addProduct", (req, res) => {
-  res.render("pages/addProduct");
+router.get("/addProduct", async(req, res) => {
+  const categories=await Category.find().populate("category")
+  res.render("pages/addProduct",{categories});
 });
 router.get("/viewProduct", async(req, res) => {
   const products=await Product.find()
